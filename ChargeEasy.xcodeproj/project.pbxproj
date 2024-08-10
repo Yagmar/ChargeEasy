@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		249E3C772C6760160078A976 /* ChargingStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249E3C762C6760160078A976 /* ChargingStation.swift */; };
+		249E3C792C67603F0078A976 /* ConnectorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249E3C782C67603F0078A976 /* ConnectorType.swift */; };
+		249E3C7B2C67605B0078A976 /* ChargingStationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249E3C7A2C67605B0078A976 /* ChargingStationViewModel.swift */; };
+		249E3C7D2C6760E10078A976 /* ChargingStationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249E3C7C2C6760E10078A976 /* ChargingStationListView.swift */; };
+		249E3C7F2C6761330078A976 /* ChargingStationMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249E3C7E2C6761330078A976 /* ChargingStationMapView.swift */; };
+		249E3C812C67A1000078A976 /* ChargingStationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249E3C802C67A1000078A976 /* ChargingStationDetailView.swift */; };
+		249E3C852C67BAD00078A976 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249E3C842C67BAD00078A976 /* LocationManager.swift */; };
+		249E3C872C67BDA40078A976 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249E3C862C67BDA40078A976 /* TabBarView.swift */; };
+		249E3C892C67BEEE0078A976 /* CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249E3C882C67BEEE0078A976 /* CustomNavBar.swift */; };
 		24E653512C63FB33000B5C16 /* ChargeEasyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E653502C63FB33000B5C16 /* ChargeEasyApp.swift */; };
 		24E653532C63FB33000B5C16 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E653522C63FB33000B5C16 /* ContentView.swift */; };
 		24E653552C63FB34000B5C16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24E653542C63FB34000B5C16 /* Assets.xcassets */; };
@@ -34,6 +43,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		249E3C762C6760160078A976 /* ChargingStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargingStation.swift; sourceTree = "<group>"; };
+		249E3C782C67603F0078A976 /* ConnectorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectorType.swift; sourceTree = "<group>"; };
+		249E3C7A2C67605B0078A976 /* ChargingStationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargingStationViewModel.swift; sourceTree = "<group>"; };
+		249E3C7C2C6760E10078A976 /* ChargingStationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargingStationListView.swift; sourceTree = "<group>"; };
+		249E3C7E2C6761330078A976 /* ChargingStationMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargingStationMapView.swift; sourceTree = "<group>"; };
+		249E3C802C67A1000078A976 /* ChargingStationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargingStationDetailView.swift; sourceTree = "<group>"; };
+		249E3C842C67BAD00078A976 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		249E3C862C67BDA40078A976 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		249E3C882C67BEEE0078A976 /* CustomNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavBar.swift; sourceTree = "<group>"; };
 		24E6534D2C63FB33000B5C16 /* ChargeEasy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChargeEasy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24E653502C63FB33000B5C16 /* ChargeEasyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeEasyApp.swift; sourceTree = "<group>"; };
 		24E653522C63FB33000B5C16 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -94,8 +112,13 @@
 		24E6534F2C63FB33000B5C16 /* ChargeEasy */ = {
 			isa = PBXGroup;
 			children = (
+				24E6537F2C640B79000B5C16 /* Resources */,
+				24E6537E2C640B6B000B5C16 /* Helpers */,
+				24E6537D2C640B53000B5C16 /* Services */,
+				24E6537C2C640AD7000B5C16 /* Model */,
+				24E6537B2C640AC9000B5C16 /* ViewModel */,
+				24E6537A2C640AC2000B5C16 /* View */,
 				24E653502C63FB33000B5C16 /* ChargeEasyApp.swift */,
-				24E653522C63FB33000B5C16 /* ContentView.swift */,
 				24E653542C63FB34000B5C16 /* Assets.xcassets */,
 				24E653562C63FB34000B5C16 /* Preview Content */,
 			);
@@ -125,6 +148,58 @@
 				24E6536D2C63FB34000B5C16 /* ChargeEasyUITestsLaunchTests.swift */,
 			);
 			path = ChargeEasyUITests;
+			sourceTree = "<group>";
+		};
+		24E6537A2C640AC2000B5C16 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				24E653522C63FB33000B5C16 /* ContentView.swift */,
+				249E3C7C2C6760E10078A976 /* ChargingStationListView.swift */,
+				249E3C7E2C6761330078A976 /* ChargingStationMapView.swift */,
+				249E3C802C67A1000078A976 /* ChargingStationDetailView.swift */,
+				249E3C862C67BDA40078A976 /* TabBarView.swift */,
+				249E3C882C67BEEE0078A976 /* CustomNavBar.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		24E6537B2C640AC9000B5C16 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				249E3C7A2C67605B0078A976 /* ChargingStationViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		24E6537C2C640AD7000B5C16 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				249E3C762C6760160078A976 /* ChargingStation.swift */,
+				249E3C782C67603F0078A976 /* ConnectorType.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		24E6537D2C640B53000B5C16 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		24E6537E2C640B6B000B5C16 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		24E6537F2C640B79000B5C16 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				249E3C842C67BAD00078A976 /* LocationManager.swift */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +332,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				249E3C7F2C6761330078A976 /* ChargingStationMapView.swift in Sources */,
+				249E3C892C67BEEE0078A976 /* CustomNavBar.swift in Sources */,
 				24E653532C63FB33000B5C16 /* ContentView.swift in Sources */,
 				24E653512C63FB33000B5C16 /* ChargeEasyApp.swift in Sources */,
+				249E3C7B2C67605B0078A976 /* ChargingStationViewModel.swift in Sources */,
+				249E3C772C6760160078A976 /* ChargingStation.swift in Sources */,
+				249E3C812C67A1000078A976 /* ChargingStationDetailView.swift in Sources */,
+				249E3C7D2C6760E10078A976 /* ChargingStationListView.swift in Sources */,
+				249E3C792C67603F0078A976 /* ConnectorType.swift in Sources */,
+				249E3C872C67BDA40078A976 /* TabBarView.swift in Sources */,
+				249E3C852C67BAD00078A976 /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,6 +509,7 @@
 				DEVELOPMENT_TEAM = 45DG9RVS8D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Nous utilisons votre position pour vous montrer votre emplacement actuel sur la carte.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -454,6 +539,7 @@
 				DEVELOPMENT_TEAM = 45DG9RVS8D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Nous utilisons votre position pour vous montrer votre emplacement actuel sur la carte.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
