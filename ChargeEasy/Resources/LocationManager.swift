@@ -11,11 +11,13 @@ import CoreLocation
 import MapKit
 import Combine
 
+
 class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     private let locationManager = CLLocationManager()
 
+    @Published var currentLocation: CLLocationCoordinate2D?
     @Published var region = MKCoordinateRegion(
-        center: CLLocationCoordinate2D(latitude: 48.8566, longitude: 2.3522), // Coordonnées par défaut à Paris, France
+        center: CLLocationCoordinate2D(latitude: 37.7749, longitude: -122.4194), // Default to San Francisco
         span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
     )
 
@@ -29,14 +31,17 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
-        region = MKCoordinateRegion(
-            center: location.coordinate,
-            span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
-        )
         
-        print("New location: \(region.center.longitude), \(region.center.latitude)")
-
+        // Update the current location and the region
+        DispatchQueue.main.async {
+            self.currentLocation = location.coordinate
+            self.region = MKCoordinateRegion(
+                center: location.coordinate,
+                span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+            )
+        }
         
+        print("New location: \(location.coordinate.latitude), \(location.coordinate.longitude)")
     }
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

@@ -16,6 +16,13 @@
 		249E3C852C67BAD00078A976 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249E3C842C67BAD00078A976 /* LocationManager.swift */; };
 		249E3C872C67BDA40078A976 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249E3C862C67BDA40078A976 /* TabBarView.swift */; };
 		249E3C892C67BEEE0078A976 /* CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249E3C882C67BEEE0078A976 /* CustomNavBar.swift */; };
+		249E3C8B2C68DB3F0078A976 /* ElectricCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249E3C8A2C68DB3F0078A976 /* ElectricCar.swift */; };
+		249E3C8D2C68DB6E0078A976 /* MyCarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249E3C8C2C68DB6E0078A976 /* MyCarViewModel.swift */; };
+		249E3C8F2C68DB9D0078A976 /* MyCarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249E3C8E2C68DB9D0078A976 /* MyCarView.swift */; };
+		249E3C942C68DE990078A976 /* BatteryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249E3C932C68DE990078A976 /* BatteryView.swift */; };
+		249E3C962C6BCF860078A976 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249E3C952C6BCF860078A976 /* UserProfile.swift */; };
+		249E3C982C6BCFA70078A976 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249E3C972C6BCFA70078A976 /* ProfileViewModel.swift */; };
+		249E3C9A2C6BCFCD0078A976 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249E3C992C6BCFCD0078A976 /* ProfileView.swift */; };
 		24E653512C63FB33000B5C16 /* ChargeEasyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E653502C63FB33000B5C16 /* ChargeEasyApp.swift */; };
 		24E653532C63FB33000B5C16 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E653522C63FB33000B5C16 /* ContentView.swift */; };
 		24E653552C63FB34000B5C16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24E653542C63FB34000B5C16 /* Assets.xcassets */; };
@@ -52,6 +59,13 @@
 		249E3C842C67BAD00078A976 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		249E3C862C67BDA40078A976 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		249E3C882C67BEEE0078A976 /* CustomNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavBar.swift; sourceTree = "<group>"; };
+		249E3C8A2C68DB3F0078A976 /* ElectricCar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectricCar.swift; sourceTree = "<group>"; };
+		249E3C8C2C68DB6E0078A976 /* MyCarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCarViewModel.swift; sourceTree = "<group>"; };
+		249E3C8E2C68DB9D0078A976 /* MyCarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCarView.swift; sourceTree = "<group>"; };
+		249E3C932C68DE990078A976 /* BatteryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryView.swift; sourceTree = "<group>"; };
+		249E3C952C6BCF860078A976 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		249E3C972C6BCFA70078A976 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		249E3C992C6BCFCD0078A976 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		24E6534D2C63FB33000B5C16 /* ChargeEasy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChargeEasy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24E653502C63FB33000B5C16 /* ChargeEasyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeEasyApp.swift; sourceTree = "<group>"; };
 		24E653522C63FB33000B5C16 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -89,6 +103,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		249E3C902C68DE550078A976 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				249E3C932C68DE990078A976 /* BatteryView.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
 		24E653442C63FB33000B5C16 = {
 			isa = PBXGroup;
 			children = (
@@ -153,12 +175,15 @@
 		24E6537A2C640AC2000B5C16 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				249E3C902C68DE550078A976 /* Component */,
 				24E653522C63FB33000B5C16 /* ContentView.swift */,
 				249E3C7C2C6760E10078A976 /* ChargingStationListView.swift */,
 				249E3C7E2C6761330078A976 /* ChargingStationMapView.swift */,
 				249E3C802C67A1000078A976 /* ChargingStationDetailView.swift */,
 				249E3C862C67BDA40078A976 /* TabBarView.swift */,
 				249E3C882C67BEEE0078A976 /* CustomNavBar.swift */,
+				249E3C8E2C68DB9D0078A976 /* MyCarView.swift */,
+				249E3C992C6BCFCD0078A976 /* ProfileView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -167,6 +192,8 @@
 			isa = PBXGroup;
 			children = (
 				249E3C7A2C67605B0078A976 /* ChargingStationViewModel.swift */,
+				249E3C8C2C68DB6E0078A976 /* MyCarViewModel.swift */,
+				249E3C972C6BCFA70078A976 /* ProfileViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -176,6 +203,8 @@
 			children = (
 				249E3C762C6760160078A976 /* ChargingStation.swift */,
 				249E3C782C67603F0078A976 /* ConnectorType.swift */,
+				249E3C8A2C68DB3F0078A976 /* ElectricCar.swift */,
+				249E3C952C6BCF860078A976 /* UserProfile.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -335,11 +364,18 @@
 				249E3C7F2C6761330078A976 /* ChargingStationMapView.swift in Sources */,
 				249E3C892C67BEEE0078A976 /* CustomNavBar.swift in Sources */,
 				24E653532C63FB33000B5C16 /* ContentView.swift in Sources */,
+				249E3C8F2C68DB9D0078A976 /* MyCarView.swift in Sources */,
+				249E3C8D2C68DB6E0078A976 /* MyCarViewModel.swift in Sources */,
 				24E653512C63FB33000B5C16 /* ChargeEasyApp.swift in Sources */,
+				249E3C942C68DE990078A976 /* BatteryView.swift in Sources */,
 				249E3C7B2C67605B0078A976 /* ChargingStationViewModel.swift in Sources */,
+				249E3C8B2C68DB3F0078A976 /* ElectricCar.swift in Sources */,
 				249E3C772C6760160078A976 /* ChargingStation.swift in Sources */,
+				249E3C9A2C6BCFCD0078A976 /* ProfileView.swift in Sources */,
 				249E3C812C67A1000078A976 /* ChargingStationDetailView.swift in Sources */,
 				249E3C7D2C6760E10078A976 /* ChargingStationListView.swift in Sources */,
+				249E3C962C6BCF860078A976 /* UserProfile.swift in Sources */,
+				249E3C982C6BCFA70078A976 /* ProfileViewModel.swift in Sources */,
 				249E3C792C67603F0078A976 /* ConnectorType.swift in Sources */,
 				249E3C872C67BDA40078A976 /* TabBarView.swift in Sources */,
 				249E3C852C67BAD00078A976 /* LocationManager.swift in Sources */,

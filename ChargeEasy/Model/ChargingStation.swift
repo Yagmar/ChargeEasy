@@ -6,44 +6,57 @@
 //
 
 import Foundation
-
 import CoreLocation
-
-
 
 enum ChargingType {
     case AC
     case DC
 }
 
+
+
 struct ChargingStation: Identifiable {
     var id = UUID()
     var name: String
     var latitude: CLLocationDegrees
     var longitude: CLLocationDegrees
-    var connectorType: ConnectorType
+    var connectorTypes: [ConnectorType]
     var power: Double // Puissance en kW
     var chargingType: ChargingType // AC ou DC
     var isAvailable: Bool
     var estimatedChargingTime: Double // Temps de recharge en heures
     var description: String // Description de la station
+    var rating: Double // Évaluation moyenne
+    var reviews: [String] // Commentaires des utilisateurs
+    var imageURL: String? // URL pour une image de la station
+    var lastUpdated: Date // Dernière mise à jour de la disponibilité
+    var address: String // Adresse de la station
+    var cost: Double // Coût par kWh
+    var recentReview: String // Commentaire récent
 
-    init(name: String, latitude: CLLocationDegrees, longitude: CLLocationDegrees, connectorType: ConnectorType, power: Double, chargingType: ChargingType, isAvailable: Bool, batteryCapacity: Double, currentBatteryLevel: Double, description: String) {
+    init(name: String, latitude: CLLocationDegrees, longitude: CLLocationDegrees, connectorTypes: [ConnectorType], power: Double, chargingType: ChargingType, isAvailable: Bool, batteryCapacity: Double, currentBatteryLevel: Double, description: String, rating: Double, reviews: [String], imageURL: String?, lastUpdated: Date, address: String, cost: Double, recentReview: String) {
         self.name = name
         self.latitude = latitude
         self.longitude = longitude
-        self.connectorType = connectorType
+        self.connectorTypes = connectorTypes
         self.power = power
         self.chargingType = chargingType
         self.isAvailable = isAvailable
         self.description = description
+        self.rating = rating
+        self.reviews = reviews
+        self.imageURL = imageURL
+        self.lastUpdated = lastUpdated
+        self.address = address
+        self.cost = cost
+        self.recentReview = recentReview
 
         // Calcul du temps de recharge estimé
         let remainingCapacity = batteryCapacity * (1.0 - currentBatteryLevel) // Capacité restante en kWh
         self.estimatedChargingTime = remainingCapacity / power // Temps en heures
     }
 
-    // Calculer le coût en fonction de la puissance de la borne
+    // Méthode pour calculer le coût en fonction de la puissance de la borne
     func calculatePrice(for capacity: Double = 50.0) -> (Double, Double) {
         let minPricePerKWh: Double
         let maxPricePerKWh: Double
