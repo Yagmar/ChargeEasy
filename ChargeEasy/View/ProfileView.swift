@@ -10,8 +10,8 @@ import SwiftUI
 
 
 struct ProfileView: View {
-    @StateObject private var viewModel = ProfileViewModel()
 
+    @EnvironmentObject var viewModel: ProfileViewModel
     var body: some View {
         ZStack {
          
@@ -28,7 +28,7 @@ struct ProfileView: View {
                     .frame(width: 150, height: 150)
 
                 // User's name
-                Text(viewModel.userProfile.name)
+                Text(viewModel.user?.displayName ?? viewModel.userProfile.name)
                     .font(.title)
                     .fontWeight(.bold)
 
@@ -46,7 +46,7 @@ struct ProfileView: View {
                     HStack {
                         Image(systemName: "envelope.fill")
                             .foregroundColor(.white)
-                        Text(viewModel.userProfile.email)
+                        Text(viewModel.user?.email ?? viewModel.userProfile.email)
                             .foregroundColor(.white)
                             .font(.subheadline)
                     }
@@ -66,7 +66,7 @@ struct ProfileView: View {
                 Spacer()
                 
                 Button(action: {
-                    
+                    viewModel.signOut()
                 }, label: {
                     Text("Deconnexion")
                         .font(.subheadline)
@@ -90,4 +90,5 @@ struct ProfileView: View {
 
 #Preview {
     ProfileView()
+        .environmentObject(ProfileViewModel())
 }

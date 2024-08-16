@@ -23,6 +23,15 @@
 		249E3C962C6BCF860078A976 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249E3C952C6BCF860078A976 /* UserProfile.swift */; };
 		249E3C982C6BCFA70078A976 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249E3C972C6BCFA70078A976 /* ProfileViewModel.swift */; };
 		249E3C9A2C6BCFCD0078A976 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249E3C992C6BCFCD0078A976 /* ProfileView.swift */; };
+		249E3C9C2C6E39390078A976 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 249E3C9B2C6E39390078A976 /* GoogleService-Info.plist */; };
+		249E3C9F2C6E39910078A976 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 249E3C9E2C6E39910078A976 /* FirebaseAnalytics */; };
+		249E3CA12C6E39910078A976 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 249E3CA02C6E39910078A976 /* FirebaseAuth */; };
+		249E3CA32C6E39910078A976 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 249E3CA22C6E39910078A976 /* FirebaseFirestore */; };
+		249E3CA52C6E39910078A976 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 249E3CA42C6E39910078A976 /* FirebaseMessaging */; };
+		249E3CA72C6E39910078A976 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 249E3CA62C6E39910078A976 /* FirebaseStorage */; };
+		249E3CA92C6E3D6A0078A976 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249E3CA82C6E3D6A0078A976 /* User.swift */; };
+		249E3CAB2C6E3F670078A976 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249E3CAA2C6E3F670078A976 /* AuthView.swift */; };
+		249E3CAD2C6E43640078A976 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249E3CAC2C6E43640078A976 /* ToastView.swift */; };
 		24E653512C63FB33000B5C16 /* ChargeEasyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E653502C63FB33000B5C16 /* ChargeEasyApp.swift */; };
 		24E653532C63FB33000B5C16 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E653522C63FB33000B5C16 /* ContentView.swift */; };
 		24E653552C63FB34000B5C16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24E653542C63FB34000B5C16 /* Assets.xcassets */; };
@@ -66,6 +75,10 @@
 		249E3C952C6BCF860078A976 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		249E3C972C6BCFA70078A976 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		249E3C992C6BCFCD0078A976 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		249E3C9B2C6E39390078A976 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		249E3CA82C6E3D6A0078A976 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		249E3CAA2C6E3F670078A976 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		249E3CAC2C6E43640078A976 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		24E6534D2C63FB33000B5C16 /* ChargeEasy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChargeEasy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24E653502C63FB33000B5C16 /* ChargeEasyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeEasyApp.swift; sourceTree = "<group>"; };
 		24E653522C63FB33000B5C16 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -83,6 +96,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				249E3CA52C6E39910078A976 /* FirebaseMessaging in Frameworks */,
+				249E3C9F2C6E39910078A976 /* FirebaseAnalytics in Frameworks */,
+				249E3CA12C6E39910078A976 /* FirebaseAuth in Frameworks */,
+				249E3CA72C6E39910078A976 /* FirebaseStorage in Frameworks */,
+				249E3CA32C6E39910078A976 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				249E3C932C68DE990078A976 /* BatteryView.swift */,
+				249E3CAC2C6E43640078A976 /* ToastView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -134,6 +153,7 @@
 		24E6534F2C63FB33000B5C16 /* ChargeEasy */ = {
 			isa = PBXGroup;
 			children = (
+				249E3C9B2C6E39390078A976 /* GoogleService-Info.plist */,
 				24E6537F2C640B79000B5C16 /* Resources */,
 				24E6537E2C640B6B000B5C16 /* Helpers */,
 				24E6537D2C640B53000B5C16 /* Services */,
@@ -184,6 +204,7 @@
 				249E3C882C67BEEE0078A976 /* CustomNavBar.swift */,
 				249E3C8E2C68DB9D0078A976 /* MyCarView.swift */,
 				249E3C992C6BCFCD0078A976 /* ProfileView.swift */,
+				249E3CAA2C6E3F670078A976 /* AuthView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -205,6 +226,7 @@
 				249E3C782C67603F0078A976 /* ConnectorType.swift */,
 				249E3C8A2C68DB3F0078A976 /* ElectricCar.swift */,
 				249E3C952C6BCF860078A976 /* UserProfile.swift */,
+				249E3CA82C6E3D6A0078A976 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -247,6 +269,13 @@
 			dependencies = (
 			);
 			name = ChargeEasy;
+			packageProductDependencies = (
+				249E3C9E2C6E39910078A976 /* FirebaseAnalytics */,
+				249E3CA02C6E39910078A976 /* FirebaseAuth */,
+				249E3CA22C6E39910078A976 /* FirebaseFirestore */,
+				249E3CA42C6E39910078A976 /* FirebaseMessaging */,
+				249E3CA62C6E39910078A976 /* FirebaseStorage */,
+			);
 			productName = ChargeEasy;
 			productReference = 24E6534D2C63FB33000B5C16 /* ChargeEasy.app */;
 			productType = "com.apple.product-type.application";
@@ -319,6 +348,9 @@
 				Base,
 			);
 			mainGroup = 24E653442C63FB33000B5C16;
+			packageReferences = (
+				249E3C9D2C6E39910078A976 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 24E6534E2C63FB33000B5C16 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -337,6 +369,7 @@
 			files = (
 				24E653582C63FB34000B5C16 /* Preview Assets.xcassets in Resources */,
 				24E653552C63FB34000B5C16 /* Assets.xcassets in Resources */,
+				249E3C9C2C6E39390078A976 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,11 +395,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				249E3C7F2C6761330078A976 /* ChargingStationMapView.swift in Sources */,
+				249E3CAD2C6E43640078A976 /* ToastView.swift in Sources */,
 				249E3C892C67BEEE0078A976 /* CustomNavBar.swift in Sources */,
 				24E653532C63FB33000B5C16 /* ContentView.swift in Sources */,
 				249E3C8F2C68DB9D0078A976 /* MyCarView.swift in Sources */,
 				249E3C8D2C68DB6E0078A976 /* MyCarViewModel.swift in Sources */,
 				24E653512C63FB33000B5C16 /* ChargeEasyApp.swift in Sources */,
+				249E3CAB2C6E3F670078A976 /* AuthView.swift in Sources */,
 				249E3C942C68DE990078A976 /* BatteryView.swift in Sources */,
 				249E3C7B2C67605B0078A976 /* ChargingStationViewModel.swift in Sources */,
 				249E3C8B2C68DB3F0078A976 /* ElectricCar.swift in Sources */,
@@ -379,6 +414,7 @@
 				249E3C792C67603F0078A976 /* ConnectorType.swift in Sources */,
 				249E3C872C67BDA40078A976 /* TabBarView.swift in Sources */,
 				249E3C852C67BAD00078A976 /* LocationManager.swift in Sources */,
+				249E3CA92C6E3D6A0078A976 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -710,6 +746,45 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		249E3C9D2C6E39910078A976 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		249E3C9E2C6E39910078A976 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 249E3C9D2C6E39910078A976 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		249E3CA02C6E39910078A976 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 249E3C9D2C6E39910078A976 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		249E3CA22C6E39910078A976 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 249E3C9D2C6E39910078A976 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		249E3CA42C6E39910078A976 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 249E3C9D2C6E39910078A976 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+		249E3CA62C6E39910078A976 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 249E3C9D2C6E39910078A976 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 24E653452C63FB33000B5C16 /* Project object */;
 }

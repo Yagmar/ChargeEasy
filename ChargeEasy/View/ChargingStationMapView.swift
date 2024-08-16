@@ -2,6 +2,8 @@ import SwiftUI
 import MapKit
 
 
+import SwiftUI
+import MapKit
 
 struct ChargingStationMapView: View {
     @StateObject private var locationManager = LocationManager()
@@ -10,14 +12,42 @@ struct ChargingStationMapView: View {
     @State private var selectedStation: ChargingStation? = nil
     @Environment(\.presentationMode) var presentationMode
     @Binding var change: Bool
+    @State private var distanceText: String = ""
     
     var body: some View {
         ZStack(alignment: .bottom) {
-            Map(coordinateRegion: $locationManager.region, annotationItems: viewModel.chargingStations) { station in
+            Map(coordinateRegion: $locationManager.region, showsUserLocation: true, annotationItems: viewModel.chargingStations) { station in
                 MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: station.latitude, longitude: station.longitude)) {
                     Button(action: {
                         selectedStation = station
                         displayPopup = true
+                        
+                        print("Selected Station Latitude: \(station.latitude), Longitude: \(station.longitude)")
+
+                                             // Print current user location's latitude and longitude
+                        if let userLocation = locationManager.currentLocation {
+                                                 print("User Location Latitude: \(userLocation.latitude), Longitude: \(userLocation.longitude)")
+                                                 
+                                                 // Calculate distance between the user's location and the station
+                                                 let stationLocation = CLLocation(latitude: station.latitude, longitude: station.longitude)
+                                                 let userCLLocation = CLLocation(latitude: userLocation.latitude, longitude: userLocation.longitude)
+                                                 let distance = stationLocation.distance(from: userCLLocation) // distance in meters
+                                                 
+                                                 // Format distance as a string
+                                                 if distance >= 1000 {
+                                                     distanceText = String(format: "%.1f km", distance / 1000)
+                                                 } else {
+                                                     distanceText = String(format: "%.0f m", distance)
+                                                 }
+                                                 
+                                                 // Print the distance
+                                                 print("Distance to station: \(distanceText)")
+                                             } else {
+                                                 print("User location is not available.")
+                                                 distanceText = "N/A"
+                                             }
+                        
+                        
                     }, label: {
                         VStack {
                             Image(systemName: station.chargingType == .DC ? "bolt.circle.fill" : "bolt.fill")
@@ -27,33 +57,13 @@ struct ChargingStationMapView: View {
                         }
                     })
                 }
-                
-                
             }
             .edgesIgnoringSafeArea(.all)
             
-            // Ajouter l'annotation pour la position actuelle de l'utilisateur
-//            if let userLocation = locationManager.currentLocation {
-//                        MapAnnotation(coordinate: userLocation) {
-//                            VStack {
-//                                Text("Me")
-//                                    .font(.caption)
-//                                    .foregroundColor(.black)
-//                                    .padding(4)
-//                                    .background(Color.white)
-//                                    .cornerRadius(4)
-//                                
-//                                Image(systemName: "person.circle.fill")
-//                                    .font(.title)
-//                                    .foregroundColor(.blue)
-//                            }
-//                        }
-//                    } else {
-//                        // Optional: Display a loading indicator if the location is not yet available
-//                        Text("Loading user location...")
-//                            .foregroundColor(.gray)
-//                            .padding()
-//                    }
+            
+            // Add user location annotation
+          
+                 
             
             if displayPopup, let station = selectedStation {
                 VStack {
@@ -135,7 +145,7 @@ struct ChargingStationMapView: View {
                                         Text("Distance")
                                             .font(.subheadline)
                                             .foregroundColor(.gray)
-                                        Text("4.5 km")
+                                        Text("\(distanceText)")
                                             .font(.body)
                                     }
                                     Spacer()
@@ -212,11 +222,13 @@ struct ChargingStationMapView: View {
             .onTapGesture {
                 change.toggle()
             }
-        }.onAppear{
-            print("locationManager.currentLocation", locationManager.currentLocation )
+        }.onAppear {
+            print("locationManager.currentLocation", locationManager.currentLocation)
         }
     }
 }
+
+
 
 #Preview {
     ChargingStationMapView(change: .constant(true))
