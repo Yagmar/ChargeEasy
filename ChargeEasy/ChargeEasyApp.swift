@@ -10,9 +10,9 @@ import Firebase
 
 @main
 struct ChargeEasyApp: App {
-    init() {
-        FirebaseApp.configure()
-    }
+    
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

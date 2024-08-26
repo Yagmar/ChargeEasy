@@ -13,13 +13,13 @@ struct ContentView: View {
     @State var change: Bool = true
 
     var body: some View {
-        ZStack (alignment: .top) {
+        ZStack(alignment: .bottom) {
             if authViewModel.isAuthenticated {
-                // Afficher le contenu principal si l'utilisateur est authentifié
-                VStack {
+                VStack(spacing: 0) {
                     if selectedTab == "Home" {
                         if change {
                             ChargingStationMapView(change: $change)
+                                .edgesIgnoringSafeArea(.all)
                         } else {
                             ChargingStationListView(change: $change)
                         }
@@ -29,34 +29,27 @@ struct ContentView: View {
                         ProfileView()
                             .environmentObject(ProfileViewModel())
                     }
-
-                    Spacer()
                 }
-                .padding(.bottom, 60) // Ensure content doesn't overlap the navbar
+                .padding(.bottom, 60) // Assurez-vous que le contenu ne chevauche pas la CustomNavBar
 
                 // Custom navigation bar
-                VStack {
-                    Spacer()
-                    CustomNavBar(selectedTab: $selectedTab)
-                }
+                CustomNavBar(selectedTab: $selectedTab)
+                    .padding(.bottom, 10) // Ajuste l'espace en bas pour que la barre de navigation ne soit pas trop basse
             } else {
                 // Afficher la vue d'authentification si l'utilisateur n'est pas authentifié
                 AuthView()
                     .environmentObject(authViewModel)
             }
-            
+
             if authViewModel.showToast, let message = authViewModel.toastMessage {
                 ToastView(message: message, isError: authViewModel.isError)
                     .transition(.move(edge: .top).combined(with: .opacity))
                     .animation(.easeInOut)
             }
-
         }
-      
         .background(Color.gray.opacity(0.1).edgesIgnoringSafeArea(.all))
     }
 }
-
 
 #Preview {
     ContentView()

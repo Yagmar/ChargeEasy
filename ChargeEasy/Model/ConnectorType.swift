@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum ConnectorType: String {
+enum ConnectorType: String, Codable {
     case Type2 = "Type 2"
     case CCS2 = "CCS2"
     case CHAdeMO = "CHAdeMO"
@@ -28,4 +28,6 @@ enum ConnectorType: String {
             return "GB/T: A standard used in China for both AC and DC charging. The connector is part of China's national charging infrastructure, supporting a wide range of power levels."
         }
     }
+    
+    static let allCases: [ConnectorType] = [.Type2, .CCS2, .CHAdeMO, .Tesla, .GB_T]
 }

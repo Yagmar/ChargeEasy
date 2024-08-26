@@ -1,10 +1,6 @@
 import SwiftUI
 import MapKit
 
-
-import SwiftUI
-import MapKit
-
 struct ChargingStationMapView: View {
     @StateObject private var locationManager = LocationManager()
     @StateObject private var viewModel = ChargingStationViewModel()
@@ -23,31 +19,18 @@ struct ChargingStationMapView: View {
                         displayPopup = true
                         
                         print("Selected Station Latitude: \(station.latitude), Longitude: \(station.longitude)")
-
-                                             // Print current user location's latitude and longitude
+                        
                         if let userLocation = locationManager.currentLocation {
-                                                 print("User Location Latitude: \(userLocation.latitude), Longitude: \(userLocation.longitude)")
-                                                 
-                                                 // Calculate distance between the user's location and the station
-                                                 let stationLocation = CLLocation(latitude: station.latitude, longitude: station.longitude)
-                                                 let userCLLocation = CLLocation(latitude: userLocation.latitude, longitude: userLocation.longitude)
-                                                 let distance = stationLocation.distance(from: userCLLocation) // distance in meters
-                                                 
-                                                 // Format distance as a string
-                                                 if distance >= 1000 {
-                                                     distanceText = String(format: "%.1f km", distance / 1000)
-                                                 } else {
-                                                     distanceText = String(format: "%.0f m", distance)
-                                                 }
-                                                 
-                                                 // Print the distance
-                                                 print("Distance to station: \(distanceText)")
-                                             } else {
-                                                 print("User location is not available.")
-                                                 distanceText = "N/A"
-                                             }
-                        
-                        
+                            let stationLocation = CLLocation(latitude: station.latitude, longitude: station.longitude)
+                            let userCLLocation = CLLocation(latitude: userLocation.latitude, longitude: userLocation.longitude)
+                            let distance = stationLocation.distance(from: userCLLocation)
+                            
+                            distanceText = distance >= 1000 ? String(format: "%.1f km", distance / 1000) : String(format: "%.0f m", distance)
+                            print("Distance to station: \(distanceText)")
+                        } else {
+                            print("User location is not available.")
+                            distanceText = "N/A"
+                        }
                     }, label: {
                         VStack {
                             Image(systemName: station.chargingType == .DC ? "bolt.circle.fill" : "bolt.fill")
@@ -59,11 +42,6 @@ struct ChargingStationMapView: View {
                 }
             }
             .edgesIgnoringSafeArea(.all)
-            
-            
-            // Add user location annotation
-          
-                 
             
             if displayPopup, let station = selectedStation {
                 VStack {
@@ -218,7 +196,7 @@ struct ChargingStationMapView: View {
                     .stroke(Color.black.opacity(0.1), lineWidth: 2)
             )
             .shadow(radius: 5)
-            .padding()
+            .padding(.bottom, 20)  // Adjust this to move the button closer to the bottom
             .onTapGesture {
                 change.toggle()
             }
@@ -227,8 +205,6 @@ struct ChargingStationMapView: View {
         }
     }
 }
-
-
 
 #Preview {
     ChargingStationMapView(change: .constant(true))

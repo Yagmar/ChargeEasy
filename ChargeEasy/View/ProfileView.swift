@@ -72,6 +72,7 @@ struct ProfileView: View {
                         .font(.subheadline)
                         .foregroundStyle(Color.red)
                 })
+                .padding()
                 
 //                Spacer()
                 
